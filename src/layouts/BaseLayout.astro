@@ -7,15 +7,10 @@ interface Props {
   title: string;
   description: string;
   legal?: boolean;
-  pageClass?: "home-shell" | "legal-shell";
+  variant?: "home" | "legal";
 }
 
-const {
-  title,
-  description,
-  legal = false,
-  pageClass = "legal-shell",
-} = Astro.props;
+const { title, description, legal = false, variant = "legal" } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -34,51 +29,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
   </head>
   <body>
-    <div class={pageClass}>
+    <div
+      class:list={[
+        "min-h-svh w-full bg-page px-[clamp(1.5rem,5.1vw,5rem)] pt-[2.4rem] pb-[4.4rem] max-[700px]:pt-6 max-[700px]:pb-7",
+        variant === "home"
+          ? "grid grid-rows-[auto_minmax(0,1fr)_auto]"
+          : "flex flex-col",
+      ]}
+    >
       <Header legal={legal} />
       <slot />
       <Footer />
     </div>
-
-    <script>
-      import { animate, hover, stagger } from "motion";
-
-      const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      if (!reducedMotion) {
-        animate(
-          '[data-motion="header"]',
-          { opacity: [0, 1], y: [-8, 0] },
-          { duration: 0.42, easing: [0.22, 1, 0.36, 1] },
-        );
-
-        animate(
-          "[data-motion-item]",
-          { opacity: [0, 1], y: [18, 0] },
-          {
-            delay: stagger(0.08, { startDelay: 0.08 }),
-            duration: 0.56,
-            easing: [0.22, 1, 0.36, 1],
-          },
-        );
-
-        animate(
-          '[data-motion="footer"]',
-          { opacity: [0, 1], y: [8, 0] },
-          {
-            delay: 0.24,
-            duration: 0.46,
-            easing: [0.22, 1, 0.36, 1],
-          },
-        );
-
-        hover("a", (element) => {
-          animate(element, { opacity: 0.58 }, { duration: 0.14 });
-          return () => animate(element, { opacity: 1 }, { duration: 0.18 });
-        });
-      }
-    </script>
   </body>
 </html>

@@ -8,14 +8,31 @@ const appStoreUrl = "https://apps.apple.com/us/app/rotile/id6751348002";
 const email = "oscar@halland.tech";
 ---
 
-<header class="site-header" data-motion="header">
-  <a class="wordmark" href="/" aria-label="Halland Technologies home">
+<header
+  class="flex min-h-7 items-center justify-between gap-8 max-[700px]:items-start max-[700px]:gap-5"
+>
+  <a
+    class="text-[clamp(1.05rem,1.35vw,1.35rem)] font-[650] tracking-[-0.025em] no-underline max-[430px]:max-w-36 max-[430px]:leading-[1.05]"
+    href="/"
+    aria-label="Halland Technologies home"
+  >
     Halland Technologies
   </a>
 
-  <nav class="primary-nav" aria-label="Primary navigation">
-    {legal && <a href="/">Home</a>}
-    <a href={appStoreUrl} target="_blank" rel="noreferrer">RoTile</a>
-    <a href={`mailto:${email}`}>Contact</a>
+  <nav
+    class="flex items-center gap-[clamp(1.5rem,4vw,4rem)] text-base max-[700px]:gap-[1.2rem] max-[700px]:text-[0.92rem] max-[430px]:gap-4"
+    aria-label="Primary navigation"
+  >
+    {
+      legal && (
+        <a class="no-underline max-[700px]:hidden" href="/">
+          Home
+        </a>
+      )
+    }
+    <a class="no-underline" href={appStoreUrl} target="_blank" rel="noreferrer">
+      RoTile
+    </a>
+    <a class="no-underline" href={`mailto:${email}`}>Contact</a>
   </nav>
 </header>

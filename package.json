@@ -4,13 +4,48 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
     "build": "astro build",
-    "start": "node ./dist/server/entry.mjs"
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run quality && npm run build",
+    "dev": "astro dev",
+    "format": "oxfmt . && prettier --write \"src/**/*.astro\"",
+    "format:check": "oxfmt --check . && prettier --check \"src/**/*.astro\"",
+    "lint": "oxlint --type-aware --deny-warnings astro.config.ts scripts src",
+    "lint:fix": "oxlint --type-aware --deny-warnings --fix astro.config.ts scripts src",
+    "quality": "tsx scripts/check-source.ts",
+    "start": "node ./dist/server/entry.mjs",
+    "typecheck": "astro check"
   },
   "dependencies": {
     "@astrojs/node": "11.1.2",
+    "@astrojs/react": "6.0.2",
     "astro": "7.2.2",
-    "motion": "13.1.0"
+    "motion": "13.1.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "oxfmt": "0.63.0",
+    "oxlint": "1.78.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.12",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=11.0.0"
+  },
+  "packageManager": "npm@11.17.0",
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true
   }
 }

@@ -1,0 +1,15 @@
+{
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "printWidth": 88,
+  "proseWrap": "always",
+  "tailwindAttributes": ["class:list"],
+  "tailwindStylesheet": "./src/styles/global.css",
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}

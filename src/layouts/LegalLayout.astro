@@ -13,14 +13,32 @@ const { title, description, eyebrow, heading, summary } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} legal>
-  <main class="legal-main">
-    <header class="legal-intro">
-      <p class="eyebrow" data-motion-item>{eyebrow}</p>
-      <h1 data-motion-item>{heading}</h1>
-      {summary && <p class="legal-summary" data-motion-item>{summary}</p>}
+  <main
+    class="mx-auto w-full max-w-[47rem] pt-[clamp(6rem,11vw,10.5rem)] pb-[clamp(6rem,10vw,9rem)] max-[700px]:pt-24 max-[700px]:pb-20"
+  >
+    <header class="mb-[clamp(4rem,8vw,7rem)] max-[700px]:mb-16">
+      <p
+        class="mb-[1.1rem] text-[0.78rem] font-[650] tracking-[0.11em] text-muted uppercase"
+      >
+        {eyebrow}
+      </p>
+      <h1
+        class="m-0 text-[clamp(3.35rem,7vw,6rem)] leading-[0.98] font-[620] tracking-[-0.065em]"
+      >
+        {heading}
+      </h1>
+      {
+        summary && (
+          <p class="mt-7 mb-0 max-w-[38rem] text-[clamp(1.08rem,1.6vw,1.28rem)] leading-[1.55] text-[#2f2f2f]">
+            {summary}
+          </p>
+        )
+      }
     </header>
 
-    <article class="legal-content" data-motion-item>
+    <article
+      class="text-[1.04rem] leading-[1.72] max-[700px]:text-base [&_a]:text-accent [&_address]:not-italic [&_h2]:mb-4 [&_h2]:text-[1.35rem] [&_h2]:font-[650] [&_h2]:tracking-[-0.025em] [&_li]:my-2 [&_li]:pl-[0.3rem] [&_ol]:my-[1rem_1.25rem] [&_ol]:list-decimal [&_ol]:pl-[1.35rem] [&_p]:mb-[1.15rem] [&_p:last-child]:mb-0 [&_section]:mb-[2.9rem] [&_section]:border-b [&_section]:border-line [&_section]:pb-[2.9rem] [&_section:last-child]:mb-0 [&_section:last-child]:border-b-0 [&_section:last-child]:pb-0 [&_ul]:my-[1rem_1.25rem] [&_ul]:list-disc [&_ul]:pl-[1.35rem]"
+    >
       <slot />
     </article>
   </main>
