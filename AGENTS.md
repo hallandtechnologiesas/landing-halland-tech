@@ -23,6 +23,6 @@
 - Use Oxlint as the linter.
 - Use Oxfmt for supported files.
 - Use Prettier only for Astro templates until Oxfmt supports them.
-- Run `npm run check` before each handoff or commit.
+- Run `pnpm check` before each handoff or commit.
 - Do not add an automated test suite unless the owner asks for one.
 - Do not deploy the website.

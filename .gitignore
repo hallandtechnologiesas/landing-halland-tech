@@ -1,5 +1,4 @@
 node_modules/
 dist/
-.qa/
 .astro/
 .DS_Store

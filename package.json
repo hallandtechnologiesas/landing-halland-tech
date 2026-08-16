@@ -5,18 +5,16 @@
   "type": "module",
   "scripts": {
     "build": "astro build",
-    "check": "npm run format:check && npm run lint && npm run typecheck && npm run quality && npm run build",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm build",
     "dev": "astro dev",
     "format": "oxfmt . && prettier --write \"src/**/*.astro\"",
     "format:check": "oxfmt --check . && prettier --check \"src/**/*.astro\"",
-    "lint": "oxlint --type-aware --deny-warnings astro.config.ts scripts src",
-    "lint:fix": "oxlint --type-aware --deny-warnings --fix astro.config.ts scripts src",
-    "quality": "tsx scripts/check-source.ts",
-    "start": "node ./dist/server/entry.mjs",
+    "lint": "oxlint --type-aware --deny-warnings astro.config.ts src",
+    "lint:fix": "oxlint --type-aware --deny-warnings --fix astro.config.ts src",
+    "preview": "astro preview",
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/node": "11.1.2",
     "astro": "7.2.2"
   },
   "devDependencies": {
@@ -30,16 +28,12 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.1",
     "tailwindcss": "4.3.3",
-    "tsx": "4.23.12",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "wrangler": "4.123.0"
   },
   "engines": {
-    "node": ">=22.12.0",
-    "npm": ">=11.0.0"
+    "node": "24.x",
+    "pnpm": "11.22.0"
   },
-  "packageManager": "npm@11.17.0",
-  "allowScripts": {
-    "esbuild@0.28.2": true,
-    "fsevents@2.3.3": true
-  }
+  "packageManager": "pnpm@11.22.0"
 }
