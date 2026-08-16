@@ -1,7 +1,7 @@
 # Website design notes
 
 - Keep the home page type-led and very small.
-- Use warm white, near-black, and one blue link color.
+- Use warm white, near-black, and one orange accent color.
 - Do not add cards, icons, illustrations, gradients, shadows, or long marketing
   sections.
 - Keep RoTile, contact, support, privacy, and terms easy to find.

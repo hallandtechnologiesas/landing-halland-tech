@@ -31,7 +31,7 @@ requested by the owner:
 - A thin rule, compact company identity, and four small links form the footer.
 - Full contact and registration details are on the directly linked Company information
   page.
-- The page uses warm white, near-black, and blue.
+- The page uses warm white, near-black, and orange.
 - The layout has no cards, icons, images, gradients, shadows, or extra sections.
 - The Astro SSR migration does not change the selected visual direction.
 - The site uses named Tailwind utilities and the standard Tailwind palette.
@@ -59,7 +59,7 @@ rule, and footer can all be read and compared at the full-view size.
   footer links align closely with the source. Desktop and mobile layouts have no
   clipping or horizontal overflow.
 - Colors and visual tokens: The warm-white background, near-black text, gray rule, and
-  blue links match the source direction and have sufficient contrast.
+  orange accents have sufficient contrast.
 - Image quality and asset fidelity: The selected source contains no image or icon
   assets. The implementation does not add placeholders or code-drawn assets.
 - Copy and content: The main statement and description match the selected source. The
