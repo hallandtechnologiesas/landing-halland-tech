@@ -116,27 +116,43 @@ a:focus-visible {
   line-height: 1.55;
 }
 
-.home-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-top: 1.9rem;
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-}
-
-.home-links a {
-  color: var(--link);
-}
-
 .site-footer {
   border-top: 1px solid var(--line);
-  padding-top: 2.65rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+
+.company-details {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.8fr) minmax(24rem, 1.2fr);
+  gap: 2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.company-details p,
+.company-details address {
+  margin: 0;
+  font-style: normal;
+}
+
+.company-details strong,
+.company-details span {
+  display: block;
+}
+
+.company-details strong {
+  color: var(--foreground);
+  font-weight: 650;
 }
 
 .site-footer nav {
   gap: clamp(1.7rem, 3.5vw, 3.4rem);
-  font-size: 0.93rem;
+  font-size: 0.85rem;
 }
 
 .site-footer a {
@@ -275,7 +291,16 @@ a:focus-visible {
   }
 
   .site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     padding-top: 1.75rem;
+  }
+
+  .company-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    font-size: 0.75rem;
   }
 
   .site-footer nav {

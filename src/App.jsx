@@ -57,6 +57,19 @@ function Header({ legal = false }) {
 function Footer() {
   return (
     <footer className="site-footer">
+      <div className="company-details">
+        <p>
+          <strong>Halland Technologies AS</strong>
+          <span>Org. no. 929 468 724 MVA</span>
+          <span>Registered in the Norwegian Register of Business Enterprises</span>
+        </p>
+        <address>
+          c/o Oscar Wold Halland · Nordre Kirkefjell 39 · 4843 Arendal, Norway
+          <span>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </span>
+        </address>
+      </div>
       <nav aria-label="Legal and support">
         <a href="/support/">Support</a>
         <a href="/privacy-policy/">Privacy</a>
@@ -80,12 +93,6 @@ function HomePage() {
             made useful.
           </h1>
           <p>Native iOS apps, web products, and technical help from Arendal, Norway.</p>
-          <div className="home-links">
-            <a href={APP_STORE_URL} target="_blank" rel="noreferrer">
-              See RoTile
-            </a>
-            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          </div>
         </div>
       </main>
 

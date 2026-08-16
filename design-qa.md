@@ -3,9 +3,9 @@
 ## Evidence
 
 - Source visual truth: `/tmp/halland-site-concepts-simple/simple-type-led.png`
-- Final implementation screenshot: `.qa/home-desktop-final.png`
+- Final implementation screenshot: `.qa/home-company-footer-desktop.png`
 - Side-by-side comparison: `.qa/home-comparison-final.png`
-- Mobile implementation screenshot: `.qa/home-mobile-final.png`
+- Mobile implementation screenshot: `.qa/home-company-footer-mobile.png`
 - Privacy desktop screenshot: `.qa/privacy-desktop.png`
 - Privacy mobile screenshot: `.qa/privacy-mobile-final.png`
 - Desktop viewport: `1536 x 1024` CSS pixels
@@ -19,17 +19,20 @@
 
 ## Full-view comparison
 
-The final home page keeps the source structure and hierarchy:
+The final home page keeps the source structure and hierarchy, with two later
+changes requested by the owner:
 
 - The wordmark is at the top left.
 - RoTile and Contact are at the top right.
 - The large statement is left aligned in the upper-middle area.
-- The description and two links follow the statement.
-- A thin rule and three small links form the footer.
+- The description follows the statement. The two links below it were removed.
+- A thin rule, required company information, and three small links form the footer.
 - The page uses warm white, near-black, and blue.
 - The layout has no cards, icons, images, gradients, shadows, or extra sections.
 
-The final side-by-side comparison shows no actionable P0, P1, or P2 mismatch.
+The final side-by-side comparison shows the selected base direction. The removed
+main links and expanded legal footer are intentional owner-directed changes.
+They do not create an actionable P0, P1, or P2 issue.
 
 ## Focused-region comparison
 
@@ -41,7 +44,11 @@ A separate crop was not necessary. The page is sparse, and all important details
 - Spacing and layout rhythm: Header, statement, supporting copy, links, footer rule, and footer links align closely with the source. Desktop and mobile layouts have no clipping or horizontal overflow.
 - Colors and visual tokens: The warm-white background, near-black text, gray rule, and blue links match the source direction and have sufficient contrast.
 - Image quality and asset fidelity: The selected source contains no image or icon assets. The implementation does not add placeholders or code-drawn assets.
-- Copy and content: The home-page copy matches the selected source. Support, Privacy, and Terms contain product-specific RoTile content and use the same visual system.
+- Copy and content: The main statement and description match the selected source.
+  The two links below the description were intentionally removed. The footer now
+  contains the legal name, organization number with MVA suffix, register status,
+  business address, email, and the support and legal links. Support, Privacy, and
+  Terms contain product-specific RoTile content and use the same visual system.
 
 ## Interaction and accessibility checks
 
@@ -74,6 +81,16 @@ A separate crop was not necessary. The page is sparse, and all important details
 - Finding: P2 — The display type was slightly too large and tall.
 - Fix: Reduced the responsive display size and tightened its line height.
 - Post-fix evidence: `.qa/home-desktop-final.png` and `.qa/home-comparison-final.png`
+
+### Iteration 3
+
+- Evidence: `.qa/home-desktop-final.png` and `.qa/home-mobile-final.png`
+- Finding: Owner request — remove the two links under the main description and add
+  required Norwegian company information.
+- Fix: Removed the two main links. Added the legal name, organization number with
+  MVA suffix, Foretaksregisteret status, business address, and email to the footer.
+- Post-fix evidence: `.qa/home-company-footer-desktop.png` and
+  `.qa/home-company-footer-mobile.png`
 
 ## Follow-up polish
 
