@@ -18,8 +18,8 @@ standard Tailwind palette.
 
 ## Requirements
 
-- Node.js 22.12 or newer.
-- pnpm 11.22.0.
+- Node.js.
+- pnpm.
 
 ## Local development
 
