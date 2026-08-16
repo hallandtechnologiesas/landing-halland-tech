@@ -4,8 +4,6 @@
     "allowJs": false,
     "checkJs": false,
     "exactOptionalPropertyTypes": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true

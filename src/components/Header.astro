@@ -8,11 +8,9 @@ const appStoreUrl = "https://apps.apple.com/us/app/rotile/id6751348002";
 const email = "oscar@halland.tech";
 ---
 
-<header
-  class="flex min-h-7 items-center justify-between gap-8 max-[700px]:items-start max-[700px]:gap-5"
->
+<header class="flex min-h-7 items-start justify-between gap-5 sm:items-center sm:gap-8">
   <a
-    class="text-[clamp(1.05rem,1.35vw,1.35rem)] font-[650] tracking-[-0.025em] no-underline max-[430px]:max-w-36 max-[430px]:leading-[1.05]"
+    class="max-w-36 text-lg leading-none font-semibold tracking-tight no-underline transition-colors hover:text-blue-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none sm:max-w-none sm:text-xl"
     href="/"
     aria-label="Halland Technologies home"
   >
@@ -20,19 +18,30 @@ const email = "oscar@halland.tech";
   </a>
 
   <nav
-    class="flex items-center gap-[clamp(1.5rem,4vw,4rem)] text-base max-[700px]:gap-[1.2rem] max-[700px]:text-[0.92rem] max-[430px]:gap-4"
+    class="flex items-center gap-4 text-sm sm:gap-6 sm:text-base md:gap-10 lg:gap-16"
     aria-label="Primary navigation"
   >
     {
       legal && (
-        <a class="no-underline max-[700px]:hidden" href="/">
+        <a
+          class="hidden no-underline transition-colors hover:text-blue-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none sm:inline"
+          href="/"
+        >
           Home
         </a>
       )
     }
-    <a class="no-underline" href={appStoreUrl} target="_blank" rel="noreferrer">
+    <a
+      class="no-underline transition-colors hover:text-blue-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
+      href={appStoreUrl}
+      target="_blank"
+      rel="noreferrer"
+    >
       RoTile
     </a>
-    <a class="no-underline" href={`mailto:${email}`}>Contact</a>
+    <a
+      class="no-underline transition-colors hover:text-blue-600 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
+      href={`mailto:${email}`}>Contact</a
+    >
   </nav>
 </header>

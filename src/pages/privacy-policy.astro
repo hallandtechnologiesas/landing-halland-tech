@@ -1,4 +1,5 @@
 ---
+import LegalSection from "../components/LegalSection.astro";
 import LegalLayout from "../layouts/LegalLayout.astro";
 ---
 
@@ -9,13 +10,12 @@ import LegalLayout from "../layouts/LegalLayout.astro";
   heading="Privacy Policy"
   summary="This policy explains how Halland Technologies AS processes data on this website and in RoTile."
 >
-  <section>
-    <h2>Who is responsible</h2>
+  <LegalSection heading="Who is responsible">
     <p>
       Halland Technologies AS is the data controller for the processing described in
       this policy.
     </p>
-    <address>
+    <address class="not-italic">
       Halland Technologies AS
       <br />
       c/o Oscar Wold Halland
@@ -26,22 +26,23 @@ import LegalLayout from "../layouts/LegalLayout.astro";
       <br />
       Organization number: 929 468 724
       <br />
-      Email: <a href="mailto:oscar@halland.tech">oscar@halland.tech</a>
+      Email: <a
+        class="text-blue-600 underline decoration-1 underline-offset-4 transition-colors hover:text-blue-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
+        href="mailto:oscar@halland.tech">oscar@halland.tech</a
+      >
     </address>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Website data</h2>
+  <LegalSection heading="Website data">
     <p>
       This website does not set advertising cookies or run product analytics. The
       service that hosts the website can process normal request data, such as the IP
       address, browser information, requested page, and request time, to deliver and
       protect the site.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Roblox data used by RoTile</h2>
+  <LegalSection heading="Roblox data used by RoTile">
     <p>
       RoTile sends configured Roblox experience identifiers to public Roblox web
       services. It uses the response to show public experience names, artwork, and
@@ -51,29 +52,33 @@ import LegalLayout from "../layouts/LegalLayout.astro";
       Roblox receives requests from the device and can process technical request data,
       including the IP address, device or browser information, request time, and
       requested experience. Roblox processes this data under its own <a
+        class="text-blue-600 underline decoration-1 underline-offset-4 transition-colors hover:text-blue-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
         href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy"
         target="_blank"
         rel="noreferrer">privacy policy</a
       >.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Product analytics in RoTile</h2>
+  <LegalSection heading="Product analytics in RoTile">
     <p>
       RoTile uses Mixpanel to understand use of the app and widgets. Analytics starts
       only after the user allows it in RoTile.
     </p>
     <p>Mixpanel can receive:</p>
-    <ul>
-      <li>A random identifier created for the app installation.</li>
-      <li>App and widget interaction events.</li>
-      <li>Widget size, configuration shape, refresh result, and refresh time.</li>
-      <li>Roblox experience identifiers added to a widget.</li>
-      <li>Public player counts returned for those experiences.</li>
-      <li>Whether a label or custom image is set.</li>
-      <li>App version, operating-system version, and device information.</li>
-      <li>IP address and approximate location derived from it.</li>
+    <ul class="list-disc space-y-2 pl-6">
+      <li class="pl-1">A random identifier created for the app installation.</li>
+      <li class="pl-1">App and widget interaction events.</li>
+      <li class="pl-1">
+        Widget size, configuration shape, refresh result, and refresh time.
+      </li>
+      <li class="pl-1">Roblox experience identifiers added to a widget.</li>
+      <li class="pl-1">Public player counts returned for those experiences.</li>
+      <li class="pl-1">Whether a label or custom image is set.</li>
+      <li class="pl-1">
+        App version, operating-system version, and device information.
+      </li>
+      <li class="pl-1">IP address and approximate location derived from it.</li>
     </ul>
     <p>
       RoTile does not send the full Roblox URL, custom label text, or selected image
@@ -82,31 +87,30 @@ import LegalLayout from "../layouts/LegalLayout.astro";
     </p>
     <p>
       Mixpanel processes the data under our instructions. Read the <a
+        class="text-blue-600 underline decoration-1 underline-offset-4 transition-colors hover:text-blue-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
         href="https://mixpanel.com/legal/privacy-policy/"
         target="_blank"
         rel="noreferrer">Mixpanel privacy policy</a
       >.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Widget settings</h2>
+  <LegalSection heading="Widget settings">
     <p>
       Apple system services manage widget settings on the device. These settings can
       include Roblox URLs, labels, and selected images. RoTile sends Roblox information
       to Roblox when it must get widget data. If analytics is allowed, RoTile also sends
       the analytics data listed above to Mixpanel.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Why we process data</h2>
+  <LegalSection heading="Why we process data">
     <p>We process data for these purposes:</p>
-    <ul>
-      <li>Provide RoTile and its widgets.</li>
-      <li>Measure use and improve the product after consent.</li>
-      <li>Find errors, protect the service, and prevent misuse.</li>
-      <li>Answer support requests and meet legal duties.</li>
+    <ul class="list-disc space-y-2 pl-6">
+      <li class="pl-1">Provide RoTile and its widgets.</li>
+      <li class="pl-1">Measure use and improve the product after consent.</li>
+      <li class="pl-1">Find errors, protect the service, and prevent misuse.</li>
+      <li class="pl-1">Answer support requests and meet legal duties.</li>
     </ul>
     <p>
       Consent is the legal basis for Mixpanel analytics. The user can withdraw consent
@@ -114,10 +118,9 @@ import LegalLayout from "../layouts/LegalLayout.astro";
       use the legal bases that apply to each activity, including performance of a
       service, legitimate interests, and legal obligations.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Retention and sharing</h2>
+  <LegalSection heading="Retention and sharing">
     <p>
       We keep personal data while it is useful for the purpose described above or while
       law requires it. We then delete or aggregate it. Retention can depend on the type
@@ -130,30 +133,31 @@ import LegalLayout from "../layouts/LegalLayout.astro";
       and the website hosting provider. Some processing can occur outside Norway or the
       European Economic Area. We use applicable safeguards when the law requires them.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Your rights</h2>
+  <LegalSection heading="Your rights">
     <p>
       Depending on the law that applies, you can ask for access, correction, deletion,
       restriction, objection, or data portability. You can withdraw analytics consent in
       RoTile without affecting earlier lawful processing.
     </p>
     <p>
-      Send a request to <a href="mailto:oscar@halland.tech">oscar@halland.tech</a>. You
-      can also <a
+      Send a request to <a
+        class="text-blue-600 underline decoration-1 underline-offset-4 transition-colors hover:text-blue-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
+        href="mailto:oscar@halland.tech">oscar@halland.tech</a
+      >. You can also <a
+        class="text-blue-600 underline decoration-1 underline-offset-4 transition-colors hover:text-blue-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
         href="https://www.datatilsynet.no/en/about-us/contact-us/how-to-complain-to-the-norwegian-dpa/"
         target="_blank"
         rel="noreferrer">complain to the Norwegian Data Protection Authority</a
       >.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Changes</h2>
+  <LegalSection heading="Changes">
     <p>
       We can update this policy when the product, providers, or legal requirements
       change. The effective date at the top shows the latest version.
     </p>
-  </section>
+  </LegalSection>
 </LegalLayout>

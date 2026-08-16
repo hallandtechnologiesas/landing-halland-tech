@@ -7,18 +7,18 @@
 - Keep RoTile, contact, support, privacy, and terms easy to find.
 - Use plain language and a responsive layout.
 - Do not use em dashes.
-- Keep motion restrained and respect reduced-motion preferences.
+- Do not add animation without clear owner approval.
 
 # Engineering rules
 
 - Use strict TypeScript for project code and configuration.
 - Use Tailwind utilities in components.
-- Keep `src/styles/global.css` for Tailwind theme tokens, base rules, and named
-  keyframes only.
+- Keep `src/styles/global.css` limited to `@import "tailwindcss";`.
+- Use named Tailwind utilities and the standard Tailwind palette.
+- Do not use arbitrary Tailwind values or arbitrary variants.
 - Do not add inline styles to Astro templates.
-- Use a React island for browser interaction. Do not add manual DOM queries or browser
-  event listeners to Astro pages.
-- Keep client JavaScript out of legal and information pages.
+- Do not add React or Motion.
+- Do not add client JavaScript without clear owner approval.
 - Do not use `any`, `@ts-ignore`, or `@ts-nocheck`.
 - Use Oxlint as the linter.
 - Use Oxfmt for supported files.

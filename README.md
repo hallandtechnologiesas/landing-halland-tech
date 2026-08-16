@@ -7,14 +7,14 @@ The public website for Halland Technologies AS.
 - Astro 7 with server-side rendering and the official Node adapter.
 - Tailwind CSS 4 through its official Vite plugin.
 - Strict TypeScript for project code and configuration.
-- A small React 19 island for the home page interaction.
-- Motion with lazy-loaded animation features.
-- Oxlint with type-aware TypeScript, React, import, and accessibility rules.
+- Oxlint with type-aware TypeScript and import rules.
 - Oxfmt for TypeScript, CSS, JSON, and Markdown.
 - Prettier only for Astro templates because Oxfmt does not support `.astro` formatting
   yet.
 
-The legal pages are server-rendered and have no client JavaScript.
+The full site is server-rendered and has no client JavaScript. The stylesheet contains
+only the Tailwind import. Components use named Tailwind utilities and the standard
+Tailwind palette.
 
 ## Requirements
 

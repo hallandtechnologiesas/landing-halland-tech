@@ -40,6 +40,12 @@ const checks: SourceCheck[] = [
   },
   {
     appliesTo: (path) => extname(path) === ".astro",
+    name: "arbitrary Tailwind utility",
+    pattern: /class(?:=|:list)\s*["'{][^"'}]*\[/u,
+    message: "Use a named Tailwind utility.",
+  },
+  {
+    appliesTo: (path) => extname(path) === ".astro",
     name: "inline style",
     pattern: /\sstyle\s*=/u,
     message: "Use a Tailwind utility or a named theme token.",
@@ -69,6 +75,15 @@ const sources = await Promise.all(
 );
 
 for (const { content, path } of sources) {
+  if (
+    relative(projectRoot, path) === "src/styles/global.css" &&
+    content.trim() !== '@import "tailwindcss";'
+  ) {
+    failures.push(
+      "src/styles/global.css:1: custom CSS. Keep only the Tailwind import.",
+    );
+  }
+
   for (const check of checks.filter(({ appliesTo }) => appliesTo(path))) {
     const match = check.pattern.exec(content);
 

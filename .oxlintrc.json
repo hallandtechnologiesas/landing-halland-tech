@@ -25,7 +25,7 @@
       }
     }
   ],
-  "plugins": ["import", "jsx-a11y", "oxc", "react", "typescript", "unicorn"],
+  "plugins": ["import", "oxc", "typescript", "unicorn"],
   "rules": {
     "eqeqeq": "error",
     "no-alert": "error",
@@ -39,12 +39,20 @@
       {
         "paths": [
           {
-            "name": "motion",
-            "message": "Use motion/react inside React islands."
+            "name": "@astrojs/react",
+            "message": "This site does not use React."
           },
           {
-            "name": "react-dom/client",
-            "message": "Astro owns React hydration. Use an Astro client directive."
+            "name": "motion",
+            "message": "Use Tailwind CSS animation utilities."
+          },
+          {
+            "name": "react",
+            "message": "This site does not use React."
+          },
+          {
+            "name": "react-dom",
+            "message": "This site does not use React DOM."
           }
         ]
       }
@@ -64,25 +72,6 @@
       }
     ],
     "prefer-const": "error",
-    "jsx-a11y/alt-text": "error",
-    "jsx-a11y/anchor-has-content": "error",
-    "jsx-a11y/aria-props": "error",
-    "jsx-a11y/aria-role": "error",
-    "jsx-a11y/click-events-have-key-events": "error",
-    "jsx-a11y/heading-has-content": "error",
-    "jsx-a11y/interactive-supports-focus": "error",
-    "jsx-a11y/no-autofocus": "error",
-    "react/exhaustive-deps": "error",
-    "react/jsx-key": "error",
-    "react/jsx-no-useless-fragment": "error",
-    "react/no-array-index-key": "error",
-    "react/no-children-prop": "error",
-    "react/no-danger": "error",
-    "react/no-direct-mutation-state": "error",
-    "react/no-unknown-property": "error",
-    "react/no-unstable-nested-components": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/rules-of-hooks": "error",
     "typescript/ban-ts-comment": "error",
     "typescript/consistent-type-imports": "error",
     "typescript/no-explicit-any": "error",

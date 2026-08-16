@@ -1,4 +1,5 @@
 ---
+import LegalSection from "../components/LegalSection.astro";
 import LegalLayout from "../layouts/LegalLayout.astro";
 ---
 
@@ -9,16 +10,14 @@ import LegalLayout from "../layouts/LegalLayout.astro";
   heading="Terms of Use"
   summary="These terms apply to this website and to RoTile."
 >
-  <section>
-    <h2>About these terms</h2>
+  <LegalSection heading="About these terms">
     <p>
       By using this website or RoTile, you agree to these terms. If you do not agree, do
       not use the service.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>RoTile</h2>
+  <LegalSection heading="RoTile">
     <p>
       RoTile shows public information from Roblox experiences, including names, artwork,
       and player counts. The information can be delayed, incomplete, or unavailable.
@@ -30,55 +29,51 @@ import LegalLayout from "../layouts/LegalLayout.astro";
       Availability and features can change as iOS, WidgetKit, Roblox services, or other
       dependencies change.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Acceptable use</h2>
+  <LegalSection heading="Acceptable use">
     <p>You must not:</p>
-    <ul>
-      <li>Use the service for an unlawful purpose.</li>
-      <li>Try to bypass security or interfere with the service.</li>
-      <li>Use automated methods that create unreasonable traffic.</li>
-      <li>Misrepresent an affiliation with Halland Technologies AS.</li>
-      <li>Use content in a way that violates another party's rights.</li>
+    <ul class="list-disc space-y-2 pl-6">
+      <li class="pl-1">Use the service for an unlawful purpose.</li>
+      <li class="pl-1">Try to bypass security or interfere with the service.</li>
+      <li class="pl-1">Use automated methods that create unreasonable traffic.</li>
+      <li class="pl-1">Misrepresent an affiliation with Halland Technologies AS.</li>
+      <li class="pl-1">Use content in a way that violates another party's rights.</li>
     </ul>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Ownership</h2>
+  <LegalSection heading="Ownership">
     <p>
       Halland Technologies AS owns RoTile, the website, and their original design, code,
       and content. Roblox names, artwork, and other third-party content belong to their
       respective owners. These terms do not transfer any ownership rights.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Service changes and availability</h2>
+  <LegalSection heading="Service changes and availability">
     <p>
       We can change, suspend, or stop features when this is reasonably necessary. We do
       not promise uninterrupted or error-free operation. We can also restrict access
       when needed to protect users, the service, or third parties.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Liability</h2>
+  <LegalSection heading="Liability">
     <p>
       To the extent permitted by law, the service is provided as available. Halland
       Technologies AS is not responsible for indirect loss, loss caused by third-party
       services, or decisions made from public player-count data. Nothing in these terms
       limits rights or liability that cannot be limited under applicable law.
     </p>
-  </section>
+  </LegalSection>
 
-  <section>
-    <h2>Law and contact</h2>
+  <LegalSection heading="Law and contact">
     <p>
       Norwegian law applies to these terms, without limiting mandatory consumer rights
       that apply where the user lives. Questions can be sent to <a
+        class="text-blue-600 underline decoration-1 underline-offset-4 transition-colors hover:text-blue-800 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transition-none"
         href="mailto:oscar@halland.tech">oscar@halland.tech</a
       >.
     </p>
-  </section>
+  </LegalSection>
 </LegalLayout>

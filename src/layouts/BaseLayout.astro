@@ -7,20 +7,19 @@ interface Props {
   title: string;
   description: string;
   legal?: boolean;
-  variant?: "home" | "legal";
 }
 
-const { title, description, legal = false, variant = "legal" } = Astro.props;
+const { title, description, legal = false } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="min-w-80 bg-stone-50 font-sans text-neutral-950 antialiased">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#fbfbfa" />
+    <meta name="theme-color" content="#fafaf9" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -28,14 +27,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="min-h-screen min-w-80 bg-stone-50 text-neutral-950">
     <div
-      class:list={[
-        "min-h-svh w-full bg-page px-[clamp(1.5rem,5.1vw,5rem)] pt-[2.4rem] pb-[4.4rem] max-[700px]:pt-6 max-[700px]:pb-7",
-        variant === "home"
-          ? "grid grid-rows-[auto_minmax(0,1fr)_auto]"
-          : "flex flex-col",
-      ]}
+      class="flex min-h-svh w-full flex-col bg-stone-50 px-6 pt-6 pb-7 sm:px-10 md:px-16 lg:px-20 lg:pt-10 lg:pb-16"
     >
       <Header legal={legal} />
       <slot />

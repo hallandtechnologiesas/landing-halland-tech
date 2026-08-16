@@ -3,10 +3,9 @@
 ## Evidence
 
 - Source visual truth: `/tmp/halland-site-concepts-simple/simple-type-led.png`
-- Final implementation screenshot: `.qa/tailwind-react-home-desktop.png`
+- Final implementation screenshot: `.qa/tailwind-builtins-home-desktop.png`
 - Side-by-side comparison: `.qa/astro-home-comparison.png`
-- Mobile implementation screenshot: `.qa/tailwind-react-home-mobile.png`
-- Reduced-motion screenshot: `.qa/tailwind-react-home-reduced-motion.png`
+- Mobile implementation screenshot: `.qa/tailwind-builtins-home-mobile.png`
 - Company information screenshot: `.qa/tailwind-company-mobile.png`
 - Privacy desktop screenshot: `.qa/privacy-desktop.png`
 - Privacy mobile screenshot: `.qa/privacy-mobile-final.png`
@@ -35,10 +34,10 @@ requested by the owner:
 - The page uses warm white, near-black, and blue.
 - The layout has no cards, icons, images, gradients, shadows, or extra sections.
 - The Astro SSR migration does not change the selected visual direction.
-- Tailwind keeps the visual system in explicit theme tokens and utilities.
-- A small React island owns the home page interaction.
-- Motion adds hover and pointer movement without changing the final resting layout.
-- CSS owns the entrance sequence so the heading still moves before React hydration.
+- The site uses named Tailwind utilities and the standard Tailwind palette.
+- The stylesheet contains only the Tailwind import.
+- The site has no custom animation.
+- The site has no client JavaScript.
 
 The final side-by-side comparison shows the selected base direction. The removed main
 links and expanded legal footer are intentional owner-directed changes. They do not
@@ -81,14 +80,11 @@ rule, and footer can all be read and compared at the full-view size.
 - The server response contains the complete page content before client JavaScript runs.
 - Browser console: no application errors or warnings.
 - Browser page errors: none.
-- Motion hover was verified with separate line transforms.
-- Pointer movement was verified with spring-backed motion values.
-- Reduced-motion mode disables the entrance, hover, and pointer transforms.
-- The React island is present on the home page only.
+- The home page has zero script elements.
 - The Company information page has zero script elements.
 - WCAG A and AA automated checks:
-  - Tailwind and React home desktop: 0 violations.
-  - Tailwind and React home mobile: 0 violations.
+  - Tailwind home desktop: 0 violations.
+  - Tailwind home mobile: 0 violations.
   - Company information mobile: 0 violations.
   - Privacy: 0 violations.
   - Support: 0 violations.
@@ -155,6 +151,26 @@ rule, and footer can all be read and compared at the full-view size.
 - Post-fix evidence: `.qa/tailwind-react-home-desktop.png`,
   `.qa/tailwind-react-home-mobile.png`, `.qa/tailwind-react-home-reduced-motion.png`,
   and `.qa/tailwind-company-mobile.png`
+
+### Iteration 7
+
+- Evidence: `.qa/tailwind-react-home-desktop.png`
+- Finding: Owner request. Remove Motion and the React island.
+- Fix: Replaced the interactive hero with static Astro markup and two small Tailwind CSS
+  animations. Removed React, React DOM, Motion, the Astro React integration, and their
+  lint and TypeScript settings.
+- Post-fix evidence: `.qa/tailwind-home-desktop.png`, `.qa/tailwind-home-mobile.png`,
+  and `.qa/tailwind-home-reduced-motion.png`
+
+### Iteration 8
+
+- Evidence: `.qa/tailwind-home-desktop.png`
+- Finding: Owner request. Remove all custom CSS and use built-in Tailwind utilities.
+- Fix: Removed theme tokens, base rules, keyframes, arbitrary values, and arbitrary
+  variants. The CSS entry contains only the Tailwind import. The page uses the standard
+  Tailwind palette and named utilities.
+- Post-fix evidence: `.qa/tailwind-builtins-home-desktop.png` and
+  `.qa/tailwind-builtins-home-mobile.png`
 
 ## Follow-up polish
 
