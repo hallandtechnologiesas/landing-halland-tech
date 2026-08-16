@@ -1,18 +1,16 @@
 {
   "name": "halland-tech",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "start": "node ./dist/server/entry.mjs"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "5.0.4",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "vite": "6.4.2"
-  },
-  "devDependencies": {}
+    "@astrojs/node": "11.1.2",
+    "astro": "7.2.2",
+    "motion": "13.1.0"
+  }
 }

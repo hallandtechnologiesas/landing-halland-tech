@@ -3,9 +3,10 @@
 ## Evidence
 
 - Source visual truth: `/tmp/halland-site-concepts-simple/simple-type-led.png`
-- Final implementation screenshot: `.qa/home-compact-footer-desktop.png`
-- Side-by-side comparison: `.qa/home-comparison-final.png`
-- Mobile implementation screenshot: `.qa/home-compact-footer-mobile.png`
+- Final implementation screenshot: `.qa/astro-home-desktop.png`
+- Side-by-side comparison: `.qa/astro-home-comparison.png`
+- Mobile implementation screenshot: `.qa/astro-home-mobile.png`
+- Reduced-motion screenshot: `.qa/astro-home-reduced-motion.png`
 - Company information screenshot: `.qa/company-information-desktop.png`
 - Privacy desktop screenshot: `.qa/privacy-desktop.png`
 - Privacy mobile screenshot: `.qa/privacy-mobile-final.png`
@@ -32,6 +33,9 @@ changes requested by the owner:
   information page.
 - The page uses warm white, near-black, and blue.
 - The layout has no cards, icons, images, gradients, shadows, or extra sections.
+- The Astro SSR migration does not change the selected visual direction.
+- Motion adds short entrance and link-hover effects without changing the final
+  resting layout.
 
 The final side-by-side comparison shows the selected base direction. The removed
 main links and expanded legal footer are intentional owner-directed changes.
@@ -58,38 +62,49 @@ A separate crop was not necessary. The page is sparse, and all important details
 
 - RoTile links point to the current App Store listing.
 - Contact links use `mailto:oscar@halland.tech`.
-- Company information, Support, Privacy, and Terms open their static routes.
+- Company information, Support, Privacy, and Terms open their SSR routes.
 - The Privacy footer link was tested through browser navigation.
-- All five routes returned the correct document title.
-- Browser console: no application errors. Vite and React development messages were the only console output.
+- All five content routes returned HTTP 200 and the correct document title.
+- An unknown route returned HTTP 404 and the correct not-found title.
+- The server response contains the complete page content before client
+  JavaScript runs.
+- Browser console: no application errors.
 - Browser page errors: none.
+- Motion link hover was verified with a live opacity change.
+- Reduced-motion mode was verified with header opacity `1` and hero transform
+  `none`.
 - WCAG A and AA automated checks:
   - Home desktop: 0 violations.
   - Home mobile: 0 violations.
   - Privacy mobile: 0 violations.
   - Support mobile: 0 violations.
   - Terms mobile: 0 violations.
+  - Astro home desktop: 0 violations.
+  - Astro company information: 0 violations.
+  - Astro support: 0 violations.
+  - Astro privacy: 0 violations.
+  - Astro terms: 0 violations.
 
 ## Comparison history
 
 ### Iteration 1
 
 - Evidence: `.qa/home-desktop-v1.png`
-- Finding: P2 — The statement and footer were lower than the source.
+- Finding: P2. The statement and footer were lower than the source.
 - Fix: Changed the main area to use an explicit top position and increased the page bottom padding.
 - Post-fix evidence: `.qa/home-desktop-v2.png`
 
 ### Iteration 2
 
 - Evidence: `.qa/home-desktop-v2.png`
-- Finding: P2 — The display type was slightly too large and tall.
+- Finding: P2. The display type was slightly too large and tall.
 - Fix: Reduced the responsive display size and tightened its line height.
 - Post-fix evidence: `.qa/home-desktop-final.png` and `.qa/home-comparison-final.png`
 
 ### Iteration 3
 
 - Evidence: `.qa/home-desktop-final.png` and `.qa/home-mobile-final.png`
-- Finding: Owner request — remove the two links under the main description and add
+- Finding: Owner request. Remove the two links under the main description and add
   required Norwegian company information.
 - Fix: Removed the two main links. Added the legal name, organization number with
   MVA suffix, Foretaksregisteret status, business address, and email to the footer.
@@ -99,15 +114,29 @@ A separate crop was not necessary. The page is sparse, and all important details
 ### Iteration 4
 
 - Evidence: `.qa/home-company-footer-desktop.png`
-- Finding: Owner request — make the legal footer smaller and confirm whether the
+- Finding: Owner request. Make the legal footer smaller and confirm whether the
   full address must remain visible in the footer.
 - Fix: Kept the legal name and organization number in the footer. Moved the full
   contact and registration record to a directly linked Company information page.
 - Post-fix evidence: `.qa/home-compact-footer-desktop.png`,
   `.qa/home-compact-footer-mobile.png`, and `.qa/company-information-desktop.png`
 
+### Iteration 5
+
+- Evidence: `.qa/home-compact-footer-desktop.png`
+- Finding: Owner request. Replace the React client application with the
+  strongest current SSR framework for this content-led site, add Motion, and
+  remove all em dashes.
+- Fix: Migrated the site to Astro 7 SSR with the official standalone Node
+  adapter. Rebuilt every route as server-rendered Astro pages. Added Motion
+  entrance and hover effects with reduced-motion support. Removed React, the
+  Vite React plugin, and all em dashes.
+- Post-fix evidence: `.qa/astro-home-desktop.png`,
+  `.qa/astro-home-mobile.png`, `.qa/astro-home-reduced-motion.png`, and
+  `.qa/astro-home-comparison.png`
+
 ## Follow-up polish
 
-- P3 — Font rasterization can vary by operating system because the page uses a native system font stack. This is acceptable for the selected minimal design.
+- P3. Font rasterization can vary by operating system because the page uses a native system font stack. This is acceptable for the selected minimal design.
 
 final result: passed

@@ -1,0 +1,84 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  legal?: boolean;
+  pageClass?: "home-shell" | "legal-shell";
+}
+
+const {
+  title,
+  description,
+  legal = false,
+  pageClass = "legal-shell",
+} = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fbfbfa" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class={pageClass}>
+      <Header legal={legal} />
+      <slot />
+      <Footer />
+    </div>
+
+    <script>
+      import { animate, hover, stagger } from "motion";
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!reducedMotion) {
+        animate(
+          '[data-motion="header"]',
+          { opacity: [0, 1], y: [-8, 0] },
+          { duration: 0.42, easing: [0.22, 1, 0.36, 1] },
+        );
+
+        animate(
+          "[data-motion-item]",
+          { opacity: [0, 1], y: [18, 0] },
+          {
+            delay: stagger(0.08, { startDelay: 0.08 }),
+            duration: 0.56,
+            easing: [0.22, 1, 0.36, 1],
+          },
+        );
+
+        animate(
+          '[data-motion="footer"]',
+          { opacity: [0, 1], y: [8, 0] },
+          {
+            delay: 0.24,
+            duration: 0.46,
+            easing: [0.22, 1, 0.36, 1],
+          },
+        );
+
+        hover("a", (element) => {
+          animate(element, { opacity: 0.58 }, { duration: 0.14 });
+          return () => animate(element, { opacity: 1 }, { duration: 0.18 });
+        });
+      }
+    </script>
+  </body>
+</html>

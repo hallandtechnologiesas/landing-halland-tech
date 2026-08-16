@@ -1,0 +1,21 @@
+---
+interface Props {
+  legal?: boolean;
+}
+
+const { legal = false } = Astro.props;
+const appStoreUrl = "https://apps.apple.com/us/app/rotile/id6751348002";
+const email = "oscar@halland.tech";
+---
+
+<header class="site-header" data-motion="header">
+  <a class="wordmark" href="/" aria-label="Halland Technologies home">
+    Halland Technologies
+  </a>
+
+  <nav class="primary-nav" aria-label="Primary navigation">
+    {legal && <a href="/">Home</a>}
+    <a href={appStoreUrl} target="_blank" rel="noreferrer">RoTile</a>
+    <a href={`mailto:${email}`}>Contact</a>
+  </nav>
+</header>

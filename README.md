@@ -2,6 +2,11 @@
 
 The public website for Halland Technologies AS.
 
+## Runtime
+
+The site uses Astro server-side rendering with the official Node adapter.
+Motion provides small entrance and link animations.
+
 ## Local development
 
 ```sh
@@ -15,4 +20,8 @@ npm run dev
 npm run build
 ```
 
-The static site is written to `dist/`.
+Start the production server after a build:
+
+```sh
+npm start
+```

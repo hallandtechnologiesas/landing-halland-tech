@@ -60,6 +60,11 @@ a:focus-visible {
   grid-template-rows: auto minmax(0, 1fr) auto;
 }
 
+.legal-shell {
+  display: flex;
+  flex-direction: column;
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -148,11 +153,6 @@ a:focus-visible {
 
 .site-footer a {
   text-decoration: none;
-}
-
-.legal-shell {
-  display: flex;
-  flex-direction: column;
 }
 
 .legal-main {
@@ -303,10 +303,6 @@ a:focus-visible {
     max-width: 26rem;
     margin-top: 1.75rem;
     font-size: 1.03rem;
-  }
-
-  .home-links {
-    margin-top: 1.6rem;
   }
 
   .site-footer {
