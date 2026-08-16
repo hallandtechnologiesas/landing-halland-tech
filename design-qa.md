@@ -3,9 +3,10 @@
 ## Evidence
 
 - Source visual truth: `/tmp/halland-site-concepts-simple/simple-type-led.png`
-- Final implementation screenshot: `.qa/home-company-footer-desktop.png`
+- Final implementation screenshot: `.qa/home-compact-footer-desktop.png`
 - Side-by-side comparison: `.qa/home-comparison-final.png`
-- Mobile implementation screenshot: `.qa/home-company-footer-mobile.png`
+- Mobile implementation screenshot: `.qa/home-compact-footer-mobile.png`
+- Company information screenshot: `.qa/company-information-desktop.png`
 - Privacy desktop screenshot: `.qa/privacy-desktop.png`
 - Privacy mobile screenshot: `.qa/privacy-mobile-final.png`
 - Desktop viewport: `1536 x 1024` CSS pixels
@@ -26,7 +27,9 @@ changes requested by the owner:
 - RoTile and Contact are at the top right.
 - The large statement is left aligned in the upper-middle area.
 - The description follows the statement. The two links below it were removed.
-- A thin rule, required company information, and three small links form the footer.
+- A thin rule, compact company identity, and four small links form the footer.
+- Full contact and registration details are on the directly linked Company
+  information page.
 - The page uses warm white, near-black, and blue.
 - The layout has no cards, icons, images, gradients, shadows, or extra sections.
 
@@ -46,17 +49,18 @@ A separate crop was not necessary. The page is sparse, and all important details
 - Image quality and asset fidelity: The selected source contains no image or icon assets. The implementation does not add placeholders or code-drawn assets.
 - Copy and content: The main statement and description match the selected source.
   The two links below the description were intentionally removed. The footer now
-  contains the legal name, organization number with MVA suffix, register status,
-  business address, email, and the support and legal links. Support, Privacy, and
-  Terms contain product-specific RoTile content and use the same visual system.
+  contains the legal name and organization number with MVA suffix. The Company
+  information page contains the geographic address, email, phone, VAT status,
+  legal form, and register status. Support, Privacy, and Terms contain
+  product-specific RoTile content and use the same visual system.
 
 ## Interaction and accessibility checks
 
 - RoTile links point to the current App Store listing.
 - Contact links use `mailto:oscar@halland.tech`.
-- Support, Privacy, and Terms open their static routes.
+- Company information, Support, Privacy, and Terms open their static routes.
 - The Privacy footer link was tested through browser navigation.
-- All four routes returned the correct document title.
+- All five routes returned the correct document title.
 - Browser console: no application errors. Vite and React development messages were the only console output.
 - Browser page errors: none.
 - WCAG A and AA automated checks:
@@ -91,6 +95,16 @@ A separate crop was not necessary. The page is sparse, and all important details
   MVA suffix, Foretaksregisteret status, business address, and email to the footer.
 - Post-fix evidence: `.qa/home-company-footer-desktop.png` and
   `.qa/home-company-footer-mobile.png`
+
+### Iteration 4
+
+- Evidence: `.qa/home-company-footer-desktop.png`
+- Finding: Owner request — make the legal footer smaller and confirm whether the
+  full address must remain visible in the footer.
+- Fix: Kept the legal name and organization number in the footer. Moved the full
+  contact and registration record to a directly linked Company information page.
+- Post-fix evidence: `.qa/home-compact-footer-desktop.png`,
+  `.qa/home-compact-footer-mobile.png`, and `.qa/company-information-desktop.png`
 
 ## Follow-up polish
 

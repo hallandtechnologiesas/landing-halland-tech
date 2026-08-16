@@ -118,41 +118,32 @@ a:focus-visible {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 2rem;
-  padding-top: 1.5rem;
+  padding-top: 1.35rem;
 }
 
-.company-details {
-  display: grid;
-  grid-template-columns: minmax(16rem, 0.8fr) minmax(24rem, 1.2fr);
-  gap: 2rem;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.55;
+.company-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
 }
 
-.company-details p,
-.company-details address {
-  margin: 0;
-  font-style: normal;
-}
-
-.company-details strong,
-.company-details span {
-  display: block;
-}
-
-.company-details strong {
-  color: var(--foreground);
+.company-summary strong {
   font-weight: 650;
 }
 
+.company-summary span {
+  color: var(--muted);
+}
+
 .site-footer nav {
-  gap: clamp(1.7rem, 3.5vw, 3.4rem);
-  font-size: 0.85rem;
+  gap: clamp(1.2rem, 2.4vw, 2.4rem);
+  font-size: 0.82rem;
 }
 
 .site-footer a {
@@ -249,6 +240,34 @@ a:focus-visible {
   font-style: normal;
 }
 
+.contact-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  margin-top: 1.35rem !important;
+}
+
+.company-facts {
+  margin: 0 0 1.5rem;
+}
+
+.company-facts div {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.75fr) minmax(0, 1.25fr);
+  gap: 1.5rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.company-facts dt {
+  color: var(--muted);
+}
+
+.company-facts dd {
+  margin: 0;
+}
+
 @media (max-width: 700px) {
   .home-shell,
   .legal-shell {
@@ -291,20 +310,19 @@ a:focus-visible {
   }
 
   .site-footer {
-    display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
     padding-top: 1.75rem;
   }
 
-  .company-details {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    font-size: 0.75rem;
+  .company-summary {
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.78rem;
   }
 
   .site-footer nav {
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
@@ -318,6 +336,11 @@ a:focus-visible {
 
   .legal-content {
     font-size: 1rem;
+  }
+
+  .company-facts div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
   }
 }
 

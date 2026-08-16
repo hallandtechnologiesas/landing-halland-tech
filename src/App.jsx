@@ -13,6 +13,10 @@ const pageDetails = {
     title: "Support — Halland Technologies",
     description: "Get support for RoTile and other Halland Technologies products.",
   },
+  company: {
+    title: "Company Information — Halland Technologies",
+    description: "Legal and contact information for Halland Technologies AS.",
+  },
   privacy: {
     title: "Privacy Policy — Halland Technologies",
     description:
@@ -57,25 +61,76 @@ function Header({ legal = false }) {
 function Footer() {
   return (
     <footer className="site-footer">
-      <div className="company-details">
-        <p>
-          <strong>Halland Technologies AS</strong>
-          <span>Org. no. 929 468 724 MVA</span>
-          <span>Registered in the Norwegian Register of Business Enterprises</span>
-        </p>
-        <address>
-          c/o Oscar Wold Halland · Nordre Kirkefjell 39 · 4843 Arendal, Norway
-          <span>
-            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          </span>
-        </address>
+      <div className="company-summary">
+        <strong>Halland Technologies AS</strong>
+        <span>Org. no. 929 468 724 MVA</span>
       </div>
       <nav aria-label="Legal and support">
+        <a href="/company-information/">Company information</a>
         <a href="/support/">Support</a>
         <a href="/privacy-policy/">Privacy</a>
         <a href="/terms-of-use/">Terms</a>
       </nav>
     </footer>
+  );
+}
+
+function CompanyInformationPage() {
+  return (
+    <LegalPage
+      page="company"
+      eyebrow="Company information"
+      title="Halland Technologies AS"
+      summary="Legal and contact information."
+    >
+      <section>
+        <h2>Contact</h2>
+        <address>
+          c/o Oscar Wold Halland
+          <br />
+          Nordre Kirkefjell 39
+          <br />
+          4843 Arendal
+          <br />
+          Norway
+        </address>
+        <p className="contact-lines">
+          <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          <a href="tel:+4741123664">+47 411 23 664</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Registration</h2>
+        <dl className="company-facts">
+          <div>
+            <dt>Organization number</dt>
+            <dd>929 468 724</dd>
+          </div>
+          <div>
+            <dt>VAT registration</dt>
+            <dd>Registered — MVA</dd>
+          </div>
+          <div>
+            <dt>Legal form</dt>
+            <dd>Private limited company (AS)</dd>
+          </div>
+          <div>
+            <dt>Business register</dt>
+            <dd>Norwegian Register of Business Enterprises</dd>
+          </div>
+        </dl>
+        <p>
+          <a
+            href="https://virksomhet.brreg.no/nb/oppslag/enheter/929468724"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View the official registration
+          </a>
+        </p>
+      </section>
+    </LegalPage>
   );
 }
 
@@ -438,6 +493,7 @@ export function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
   if (path === "/") return <HomePage />;
+  if (path === "/company-information") return <CompanyInformationPage />;
   if (path === "/support") return <SupportPage />;
   if (path === "/privacy-policy") return <PrivacyPage />;
   if (path === "/terms-of-use") return <TermsPage />;
