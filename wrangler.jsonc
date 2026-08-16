@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "landing-halland-tech",
+  "compatibility_date": "2026-08-16",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+  "routes": [
+    {
+      "pattern": "halland.tech",
+      "custom_domain": true,
+    },
+  ],
+}

@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  fsevents: true
+  workerd: true
+engineStrict: true
+saveExact: true

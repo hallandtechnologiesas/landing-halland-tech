@@ -2,10 +2,9 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "ignorePatterns": [
     ".astro/**",
-    ".qa/**",
     "dist/**",
     "node_modules/**",
-    "package-lock.json",
+    "pnpm-lock.yaml",
     "**/*.astro"
   ],
   "printWidth": 88,

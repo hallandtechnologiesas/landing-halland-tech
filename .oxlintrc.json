@@ -11,7 +11,7 @@
     "es2024": true,
     "node": true
   },
-  "ignorePatterns": [".astro/**", ".qa/**", "dist/**", "node_modules/**"],
+  "ignorePatterns": [".astro/**", "dist/**", "node_modules/**"],
   "options": {
     "denyWarnings": true,
     "reportUnusedDisableDirectives": "error",
